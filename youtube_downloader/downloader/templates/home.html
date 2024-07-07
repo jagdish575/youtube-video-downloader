@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>YouTube Video Downloader</h1>
+        <p>Download your favorite YouTube videos quickly and easily.</p>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Fast and easy downloads</li>
+            <li>High-quality video and audio</li>
+            <li>Supports multiple formats</li>
+        </ul>
+    </section>
+
+    <section id="download">
+        <h2>Download Video</h2>
+        <form method="post" action="{% url 'download' %}" id="download-form">
+            {% csrf_token %}
+            <label for="video_url">YouTube Video URL:</label>
+            <input type="text" id="video_url" name="video_url" placeholder="Enter YouTube video URL" required>
+            <button type="submit">Download</button>
+        </form>
+    </section>
+
+    <footer id ="css">
+        <div class="footer-bottom">
+            <p>© 2024 YouTube Downloader, made with ❤️ by Jagdish.</p>
+        </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><a href="#" >Youtube Downloader</a></h3>
+                <ul>
+                    <li><a href="#">Download Youtube to mp4</a></li>
+                    <li><a href="#">Youtube Shorts</a></li>
+                    <li><a href="#">TikTok Video Downloader</a></li>
+                    <li><a href="#">Twitter Video Downloader</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><a href="#">Instagram Video Downloader</a></h3>
+                <ul>
+                    <li><a href="#">Instagram Story Download</a></li>
+                    <li><a href="#">Instagram Reels Download</a></li>
+                    <li><a href="#">Instagram Viewer</a></li>
+                    <li><a href="#">Facebook Video Downloader</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><a href="#">About us</a></h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Partners</h3>
+                <ul>
+                    <li><a href="#">OnlineVideoConverter</a></li>
+                    <li><a href="#">SaveFrom.net</a></li>
+                    <li><a href="#">Save-From.net</a></li>
+                    <li><a href="#">iGram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
